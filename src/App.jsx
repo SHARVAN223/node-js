@@ -1,4 +1,5 @@
-// const App = () => {
+
+//   const App = () => {
 
 //   const myName =(nm,e)=>{
 //     console.log(nm)
@@ -10,11 +11,10 @@
 //     </>
 //   )
 // }
+
  
 // export default App;
-
-
-// const App = () => {
+//   const App = () => {
 
 //   const myName =(nm)=>{
 //     console.log(nm)
@@ -31,8 +31,6 @@
 
 
 
-
-
 // const App = () => {
 
 //   const myName =(nm)=>{
@@ -42,8 +40,6 @@
 //     console.log(nm.target.value)
 
 //     console.log(nm.target.type)
-
-
 //   }
 //   return (
 //     <>
@@ -73,4 +69,4 @@ const App = () => {
   )
 }
  
-export default App;
+export default App
