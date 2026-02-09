@@ -1,72 +1,67 @@
 
-//   const App = () => {
+//  import { useState } from "react"
+//  const App =()=>{
+//   const[name , setName] = useState("sharvan");
 
-//   const myName =(nm,e)=>{
-//     console.log(nm)
-//     console.log(e.type)
+//   const display =()=>{
+//     setName('saurabh')
 //   }
 //   return (
 //     <>
-//        <button onClick={(e)=>{myName("sharvan",e)}}>Click Here</button>
+//     <h1>Welcome! {name}</h1>
+//     <button onClick={display}>click </button>
 //     </>
 //   )
 // }
 
- 
-// export default App;
-//   const App = () => {
 
-//   const myName =(nm)=>{
-//     console.log(nm)
-    
-//   }
+// // export default App
+
+
+// import { useState } from "react"
+// const App =()=>{
+//   const[color , setColor] = useState("red");
+
+
 //   return (
 //     <>
-//       <button onClick={myName}>Click </button>
+//     <h1 style={{color:color}}>My color! {color}</h1>
+//     <button onClick={()=>{setColor("green")}} >green </button>
+//     <button onClick={()=>{setColor("blue")}}>blue </button>
+//     <button onClick={()=>{setColor("black")}}>black </button>
+//     <button onClick={()=>{setColor("yellow")}}>yellow </button>
 //     </>
 //   )
 // }
- 
-// export default App;
+
+
+// export default App
 
 
 
-// const App = () => {
-
-//   const myName =(nm)=>{
-//     console.log(nm)
-//     console.log(nm.target)
-//     console.log(nm.target.name)
-//     console.log(nm.target.value)
-
-//     console.log(nm.target.type)
-//   }
-//   return (
-//     <>
-//       <button name="btn1" value="mybtn" type="btntype" onClick={myName}>Click </button>
-//     </>
-//   )
-// }
- 
-// export default App;
+import { useState } from "react"
+const App =()=>{
+  const[Count , setCount] = useState(0);
 
 
+  const counter = ()=>{
+    if (Count>0){
+      setCount(Count-1)
+    }else{
+      alert("you can not")
+    }
 
-
-const App = () => {
-
-  const myName =(nm)=>{
-    console.log(nm.target.name)
-    console.log(nm.target.value)
   }
   return (
     <>
-      Enter Name :<input type="text" name="name" onChange={myName}></input> <br/>
-      
-      Enter City : <input type="text" name="city" onChange={myName}></input>   <br/>
-      <button>Click</button>
+    <h1>Counter App:</h1>
+    <button onClick={()=>{setCount(Count+1)}}>Increment</button>
+    <h1>{Count}</h1>
+    
+    <button onClick={counter}>Decrement</button>
     </>
   )
 }
- 
+
 export default App
+
