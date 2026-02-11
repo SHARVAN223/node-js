@@ -1,35 +1,23 @@
 
-//  import { useState } from "react"
-//  const App =()=>{
-//   const[name , setName] = useState("sharvan");
-
-//   const display =()=>{
-//     setName('saurabh')
-//   }
-//   return (
-//     <>
-//     <h1>Welcome! {name}</h1>
-//     <button onClick={display}>click </button>
-//     </>
-//   )
-// }
-
-
-// // export default App
-
-
-// import { useState } from "react"
+import { useState } from "react"
 // const App =()=>{
-//   const[color , setColor] = useState("red");
+//   const[name,setName] = useState("");
+//    const[city,setCity] = useState("");
 
+// const { useState } = require("react")
+
+//  const handleSumbit =() =>{
+//   console.log({name:name,city:city})
+//  }
 
 //   return (
 //     <>
-//     <h1 style={{color:color}}>My color! {color}</h1>
-//     <button onClick={()=>{setColor("green")}} >green </button>
-//     <button onClick={()=>{setColor("blue")}}>blue </button>
-//     <button onClick={()=>{setColor("black")}}>black </button>
-//     <button onClick={()=>{setColor("yellow")}}>yellow </button>
+//     <h1>Application form</h1>
+//     Enter name:<input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+//     <br />
+//     Enter City:<input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}}/>
+//     <br />
+//     <button onClick={handleSumbit}>Save!!</button>
 //     </>
 //   )
 // }
@@ -38,30 +26,29 @@
 // export default App
 
 
-
-import { useState } from "react"
 const App =()=>{
-  const[Count , setCount] = useState(0);
-
-
-  const counter = ()=>{
-    if (Count>0){
-      setCount(Count-1)
-    }else{
-      alert("you can not")
-    }
-
+  const [input , setInput] =useState({});
+  const handleInput =(e) =>{
+    let name = e.target.name
+    let value = e.target.value
+    setInput(values =>({...values,[name]:value}));
+    console.log(input);
   }
   return (
     <>
-    <h1>Counter App:</h1>
-    <button onClick={()=>{setCount(Count+1)}}>Increment</button>
-    <h1>{Count}</h1>
-    
-    <button onClick={counter}>Decrement</button>
+    <h1>Application form</h1>
+    Enter name:<input type="text" name ="name" onChange={handleInput}/>
+    <br />
+    Enter City:<input type="text" name ="city" onChange={handleInput}/>
+    <br />
+    Enter RollNo:<input type="text" name = "RollNo" onChange={handleInput}/>
+    <br />
+    Enter age:<input type="text" name = "age" onChange={handleInput}/>
+    <br />
+
+    <button>Save!!</button>
     </>
   )
 }
 
 export default App
-
