@@ -2,7 +2,7 @@
   "data": [
     {
       "name": "sharvan D",
-      "rollno": "32",
+      "rollno": 101,
       "city": "darbhanaga",
       "age": 21,
       "id": "a605"
@@ -10,7 +10,7 @@
     {
       "id": "d57a",
       "name": "pandey",
-      "rollno": "23",
+      "rollno": 102,
       "city": "ara",
       "age": "21"
     }
