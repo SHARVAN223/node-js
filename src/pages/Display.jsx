@@ -16,16 +16,16 @@ const Display=()=>{
     const ans=mydata.map((key)=>{
         return(
             <>
-            <tr>
-                <td>{key.name}</td>
-                <td>{key.rollno}</td>
-                <td>{key.city}</td>
-                <td>{key.age}</td>               
-            </tr>
+                <tr>
+                    <td>{key.name}</td>
+                    <td>{key.rollno}</td>
+                    <td>{key.city}</td>
+                    <td>{key.age}</td>               
+                </tr>
             </>
         )
-    }
-)
+    })
+
         return(
         <>
         <h1>Display Page</h1>
