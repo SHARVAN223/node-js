@@ -7,6 +7,9 @@
 // import Update from "./pages/Update.jsx";
 // import MyEdit from "./MyEdit.jsx";
 
+import Collage from "./Collage"
+import MyContext from "./MyContext"
+
 
 
 
@@ -31,21 +34,41 @@
 // }
 // export default App;
 
-import { useState } from "react"
-import Comp1 from "./comp1"
-import { createContext } from "react"
-const MyContext = createContext();
-const App= ()=>{
-  const [user , setUser] = useState("sharvan")
-  return(
+
+
+// import { useState , createContext } from "react"
+// import Comp1 from "./comp1"
+
+
+// const UserContext = createContext()
+// const App= ()=>{
+//   const [user , SetUser] = useState("sharvan")
+//   return(
+//     <>
+//     <h2>This is app: {user}</h2>
+//      <UserContext.Provider value={user}>
+//         <Comp1/>
+//      </UserContext.Provider>
+      
+   
+//     </>
+//   )
+// }
+
+// export default App
+// export {UserContext}
+
+
+const App =() =>{
+  return (
     <>
-    <h2>This is app: {user}</h2>
-    <MyContext.Provider value={user}>
-      <Comp1/>
-    </MyContext.Provider>
+    <h1>Welcome to app:</h1>
+    <MyContext>
+      <Collage/>
+    </MyContext>
+   
     </>
   )
 }
 
 export default App
-export {MyContext}
