@@ -1,74 +1,108 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Layout from "./Layout";
-// import Home from "./pages/Home";
-// import Insert from "./pages/Insert";
-// import Display from "./pages/Display";
-// import Search from "./pages/Search.jsx";
-// import Update from "./pages/Update.jsx";
-// import MyEdit from "./MyEdit.jsx";
+// import Collage from "./Collage"
+// import MyContext from "./MyContext"
 
-import Collage from "./Collage"
-import MyContext from "./MyContext"
+// import { useContext, useEffect, useRef, useState } from "react";
+// import { UserLogin } from "./LoginContext";
+// import Auth from "./Auth";
+// import UnAuth from "./UnAuth";
 
-
-
-
-// const App = () => {
+// const App =() =>{
 //   return (
 //     <>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<Layout />} >
-//             <Route index element={<Home />} />
-//             <Route path="home" element={<Home />} />
-//             <Route path="insert" element={<Insert />} />
-//             <Route path="display" element={<Display />} />
-//             <Route path="update" element={<Update />} />
-//             <Route path="myedit/:id" element={<MyEdit />} />
-//             <Route path="search" element={<Search />} />
-//           </Route>
-//         </Routes>
-//       </BrowserRouter>
-//     </>
-//   )
-// }
-// export default App;
-
-
-
-// import { useState , createContext } from "react"
-// import Comp1 from "./comp1"
-
-
-// const UserContext = createContext()
-// const App= ()=>{
-//   const [user , SetUser] = useState("sharvan")
-//   return(
-//     <>
-//     <h2>This is app: {user}</h2>
-//      <UserContext.Provider value={user}>
-//         <Comp1/>
-//      </UserContext.Provider>
-      
+//     <h1>Welcome to app:</h1>
+//     <MyContext>
+//       <Collage/>
+//     </MyContext>
    
 //     </>
 //   )
 // }
 
 // export default App
-// export {UserContext}
 
 
-const App =() =>{
+
+// const App =()=>{
+//   const {user}= useContext(UserLogin);
+//     return(
+//       <>
+//         <h2>App:</h2>
+//         {user.auth ? <Auth/>: <UnAuth/>}
+//       </>
+//     )
+
+// }
+// export default App;
+
+
+//  import { useRef } from "react";
+// const App=()=>{
+//   const myref = useRef("hjhhh")
+//   const myColor=()=>{
+//     myref.current.style.color="red"
+//   }
+//   return (
+//     <>
+     
+//        <h1 ref={myref}>welcome to app</h1>
+//        <button onClick={myColor}>Click</button>
+//     </>
+//   )
+// }
+// export default App
+
+
+
+// import { useState ,useEffect,useRef } from "react";
+// const App =()=>{
+//   const [inputValue , setInputvalue] = useState("")
+//   const count = useRef(0);
+//   useEffect(()=>{
+//     count.current = count.current+1
+//   });
+//   return (
+//     <>
+//       <input type="text" value={inputValue} onChange={(e) =>setInputvalue(e.target.value)}/>  
+//       <h1>Render Count:{count.current}</h1>    
+//     </>
+//   )
+// }
+
+// export  default App;
+
+
+import { useReducer } from "react";
+
+const App = () => {
+  const initialState = 0;
+
+  const reducer = (state, action) => {
+    switch (action) {
+      case "INCREMENT":
+        return state + 1;
+      case "DECREMENT":
+        return state - 1;
+      default:
+        return state;
+    }
+  };
+
+  const [count, dispatch] = useReducer(reducer, initialState);
+
   return (
     <>
-    <h1>Welcome to app:</h1>
-    <MyContext>
-      <Collage/>
-    </MyContext>
-   
-    </>
-  )
-}
+      <h2>Welcome my program</h2>
+      <h3>Count: {count}</h3>
 
-export default App
+      <button onClick={() => dispatch("INCREMENT")}>
+        Increment
+      </button>
+
+      <button onClick={() => dispatch("DECREMENT")}>
+        Decrement
+      </button>
+    </>
+  );
+};
+
+export default App;
