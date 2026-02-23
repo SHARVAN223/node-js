@@ -1,6 +1,11 @@
 // import Collage from "./Collage"
 // import MyContext from "./MyContext"
 
+// import UseMemo from "./Usememo"
+import Usememo1 from "./Usememo1"
+
+// import { useState } from "react"
+
 // import { useContext, useEffect, useRef, useState } from "react";
 // import { UserLogin } from "./LoginContext";
 // import Auth from "./Auth";
@@ -71,38 +76,54 @@
 // export  default App;
 
 
-import { useReducer } from "react";
+// import { useReducer } from "react";
 
-const App = () => {
-  const initialState = 0;
+// const App = () => {
+//   const initialState = 0;
 
-  const reducer = (state, action) => {
-    switch (action) {
-      case "INCREMENT":
-        return state + 1;
-      case "DECREMENT":
-        return state - 1;
-      default:
-        return state;
-    }
-  };
+//   const reducer = (state, action) => {
+//     switch (action) {
+//       case "INCREMENT":
+//         return state + 1;
+//       case "DECREMENT":
+//         return state - 1;
+//       default:
+//         return state;
+//     }
+//   };
 
-  const [count, dispatch] = useReducer(reducer, initialState);
+//   const [count, dispatch] = useReducer(reducer, initialState);
 
+//   return (
+//     <>
+//       <h2>Welcome my program</h2>
+//       <h3>Count: {count}</h3>
+
+//       <button onClick={() => dispatch("INCREMENT")}>
+//         Increment
+//       </button>
+
+//       <button onClick={() => dispatch("DECREMENT")}>
+//         Decrement
+//       </button>
+//     </>
+//   );
+// };
+
+// export default App;
+
+
+
+
+const App =()=>{
+  
+  
   return (
     <>
-      <h2>Welcome my program</h2>
-      <h3>Count: {count}</h3>
-
-      <button onClick={() => dispatch("INCREMENT")}>
-        Increment
-      </button>
-
-      <button onClick={() => dispatch("DECREMENT")}>
-        Decrement
-      </button>
+      <h1>Welcome App</h1>
+      <Usememo1/>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
