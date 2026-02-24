@@ -2,28 +2,28 @@
 // import MyContext from "./MyContext"
 
 // import UseMemo from "./Usememo"
-import Usememo1 from "./Usememo1"
+// import Usememo1 from "./Usememo1"
 
 // import { useState } from "react"
 
-// import { useContext, useEffect, useRef, useState } from "react";
-// import { UserLogin } from "./LoginContext";
-// import Auth from "./Auth";
-// import UnAuth from "./UnAuth";
+import { useContext, useEffect, useRef, useState } from "react";
+import { UserLogin } from "./LoginContext";
+import Auth from "./Auth";
+import UnAuth from "./UnAuth";
 
-// const App =() =>{
-//   return (
-//     <>
-//     <h1>Welcome to app:</h1>
-//     <MyContext>
-//       <Collage/>
-//     </MyContext>
+const App =() =>{
+  return (
+    <>
+    <h1>Welcome to app:</h1>
+    <MyContext>
+      <Collage/>
+    </MyContext>
    
-//     </>
-//   )
-// }
+    </>
+  )
+}
 
-// export default App
+export default App
 
 
 
@@ -112,18 +112,20 @@ import Usememo1 from "./Usememo1"
 
 // export default App;
 
+// import {useDispatch,useSelector}   from 'react-redux';
+// import { Decrement , Increment } from './CounterSlice';
 
-
-
-const App =()=>{
+// const App =()=>{
+//   const myval = useSelector(state=>state.mycounter.count)
+//   const dispatch = useDispatch();
   
-  
-  return (
-    <>
-      <h1>Welcome App</h1>
-      <Usememo1/>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <h1>Welcome App</h1>
+//       <button onClick={()=>{dispatch(Increment())}}>Increment</button>
+//       <button onClick={()=>{dispatch(Decrement())}}>Decrement</button>
+//     </>
+//   )
+// }
 
-export default App
+// export default App;
