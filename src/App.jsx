@@ -17,17 +17,50 @@
 
 
 import { useSelector , useDispatch } from "react-redux"
-import { colorChange } from "./colorSlice"
+import { addTask } from "./TodoSlice";
+import { useState } from "react";
 const App =()=>{
-  const myclr = useSelector(state=>state.mycolor.color);
-   const dispatch = useDispatch()
+  const [txtval,setTxtVal] = useState("");
+  const task = useSelector(state=>state.Todo.task);
+  const dispatch = useDispatch()
+  console.log(task)
+  let sno=0;
+  const ans = task.map((key)=>{
+    sno++;
+    return (
+    <>
+    <h1>Welcome App</h1>
+    <tr>
+      <td>{sno}</td>
+      <td>{key.work}</td>
+    </tr>
+    </>
+  )
+  })
   return (
     <>
-    <h1>Welcome</h1>
-    <button onClick={()=>{dispatch(colorChange())}}>Click here</button>
-    <div style={{width:"300px", height:"300px",backgroundColor:myclr}}></div>
+    <h1>To Do App</h1>
+    Enter Task : <input type="" value={txtval} onChange={(e)=>{setTxtVal(e.target.value)}}/>
+    <button onClick={()=>{dispatch(addTask({work:txtval}))}}></button>
+    <hr/>
+    <table>
+      <tr>
+        <th>SNO.</th>
+        <th>Your Task</th>
+      </tr>
+      {ans}
+    </table>
     </>
   )
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
