@@ -1,17 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const TodoSlice=createSlice({
-    name:"Todo",
-    initialState:{
-        task:[]
+const TodoSlice = createSlice({
+  name: "Todo",
+
+  initialState: {
+    task: []
+  },
+
+  reducers: {
+
+    addTask: (state, action) => {
+      state.task.push({
+        work: action.payload.work,
+        status: false
+      })
     },
-    reducers:{
-        addTask:(state) =>{
-            console.log(action.payload)
-            state.task.push(actions.payload)
-        }
+
+    deleteTask: (state, action) => {
+      state.task.splice(action.payload, 1)
+    },
+
+    completeTask: (state, action) => {
+      state.task[action.payload].status = true
+    },
+
+    incompleteTask: (state, action) => {
+      state.task[action.payload].status = false
     }
+
+  }
+
 })
 
-export const {addTask} = TodoSlice.actions;
-export default TodosliceSlice.reducer
+export const { addTask, deleteTask, completeTask, incompleteTask } = TodoSlice.actions;
+
+export default TodoSlice.reducer;
